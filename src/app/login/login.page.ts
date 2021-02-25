@@ -8,6 +8,8 @@ import { User } from '../shared/user.class';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
+
+
 export class LoginPage implements OnInit {
   user: User = new User();
   constructor(private router: Router, private authSvc: AuthService) { }
@@ -20,7 +22,9 @@ export class LoginPage implements OnInit {
 
     if(user) {
       console.log('Successfully logged in!');
-      this.router.navigateByUrl('/');
+      this.router.navigateByUrl('/'); // ROTA
+      this.user.email = ""; // LIMPAR INPUT E-MAIL DA TELA LOGIN
+      this.user.password = ""; // LIMPAR INPUT SENHA DA TELA LOGIN
     }
 
   }
